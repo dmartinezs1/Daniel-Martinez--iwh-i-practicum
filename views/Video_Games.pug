@@ -1,16 +1,16 @@
-//- ** This is a sample of a pug template and how it uses the data passed to it from index.js.
-
 doctype html
 html 
     head 
         title= `${title}`
         meta(name="viewport" content="width=device-width, initial-scale=1")
         link(rel="stylesheet", href="/css/style.css")
-    body    
-        h1 Video Games
-        .cards 
-            each videoGame in data
-                .card 
-                    h2.card__name #{videoGame.properties.name}
-                    p.card__genre #{videoGame.properties.game_genre}
-                    p.card__developer #{videoGame.properties.developer}
+    body
+        .content
+            h1.index Video Games
+            a(href="/create") Create/Update 
+            .cards 
+                each videoGame in data
+                    .card 
+                        h2.card__name #{videoGame.properties.name}
+                        p.card__genre Genre: #{videoGame.properties.game_genre}
+                        p.card__developer Developer: #{videoGame.properties.developer}

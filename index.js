@@ -76,7 +76,7 @@ app.post('/create', async (req, res) => {
     } else {
         const updateVideoGame = `https://api.hubapi.com/crm/v3/objects/2-32027842/${updateId}`;
         try {
-            await axios.patch(updateVideoGame, create, { headers });
+            const response = await axios.patch(updateVideoGame, create, { headers });
             res.redirect('/');
         } catch (err) {
             res.redirect('/');
